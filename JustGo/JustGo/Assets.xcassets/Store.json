@@ -1,0 +1,46 @@
+{
+  "Shops": [
+    {
+      "Drinks": [        
+          {
+            "name": "Coffee", 
+            "price": "1.50",
+            "picture": "drink.jpg"
+          }, 
+          {
+            "name": "Mango Smoothie", 
+            "price": "7.30",
+            "picture": "drink.jpg"
+          }, 
+          {
+            "name": "Tea", 
+            "price": "1.00",
+            "picture": "drink.jpg"
+          }
+        ],      
+      "Food":  [
+          {
+            "name": "BLT", 
+            "price": "3.50",
+            "picture": "food.jpg"
+          }, 
+          {
+            "name": "PBJ", 
+            "price": "2.20",
+            "picture": "food.jpg"
+          }, 
+          {
+            "name": "Turkey Club", 
+            "price": "5.50",
+            "picture": "food.jpg"
+          }
+        ], 
+      "ID": "courant_Deli", 
+      "address": "251 Mercer St, New York, NY 10012", 
+      "store_Latitude": "12", 
+      "store_Longtitude": "12", 
+      "store_Name": "Courant Deli"
+    }
+  ], 
+  "status": "success"
+}
