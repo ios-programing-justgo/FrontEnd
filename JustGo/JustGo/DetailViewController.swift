@@ -129,6 +129,17 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
         }
     }
     
+    //passing data to commentVC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailToComment"{
+            let destination = segue.destination as! CommentViewController
+            
+            //pass data here
+    
+        }
+    }
+    
+    
     //MARK:- MapKit delegates
 
     func setUpLocationManager(){

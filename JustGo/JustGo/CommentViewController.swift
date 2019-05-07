@@ -14,10 +14,14 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var commentLabel: UITableView!
     @IBOutlet weak var tableView: UITableView!
     
+    var commentArr = [(Int,String)]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
     }
     
 }
