@@ -236,9 +236,6 @@
                                 <rect key="frame" x="168" y="484" width="79" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="search:" destination="QBM-EM-ITw" eventType="touchUpInside" id="aCc-m8-kmW"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGw-EK-06h">
                                 <rect key="frame" x="168" y="484" width="79" height="31"/>
@@ -260,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUg-Yd-DB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-81" y="208"/>
+            <point key="canvasLocation" x="-96" y="-123"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sdJ-Su-6TJ">
