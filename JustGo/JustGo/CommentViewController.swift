@@ -10,12 +10,11 @@ import UIKit
 
 class CommentViewController: UIViewController {
 
-    @IBOutlet weak var scoreLabel: UITableView!
-    @IBOutlet weak var commentLabel: UITableView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var scoreTextField: UITextField!
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var submitReviewButton: UIButton!
+    
     
     var commentArr = [rating]()
     
@@ -42,18 +41,11 @@ extension CommentViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RatingCell", for: indexPath) as! RatingCell
-        let item: Item
+        let rating: rating
 
-        item = itemArr[indexPath.row]
+        rating = commentArr[indexPath.row]
         
-        cell.setItem(item: item)
+        cell.setItem(rating: rating)
         return cell
     }
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = itemArr[indexPath.row]
-        performSegue(withIdentifier: "ListToDetail", sender: item)
-    }
-    
 }
