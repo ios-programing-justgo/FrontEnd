@@ -22,6 +22,8 @@ class CommentViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print("number of comments: \(commentArr.count)")
+        
         
         
     }
@@ -44,6 +46,8 @@ extension CommentViewController: UITableViewDataSource, UITableViewDelegate{
         let rating: rating
 
         rating = commentArr[indexPath.row]
+        print(rating.rating,rating.comment)
+        print()
         
         cell.setItem(rating: rating)
         return cell
