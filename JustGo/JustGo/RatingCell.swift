@@ -19,7 +19,6 @@ class RatingCell: UITableViewCell {
         scoreLabel.text = rating.rating
         commentLabel.text = rating.comment
 
-        
     }
 
 }

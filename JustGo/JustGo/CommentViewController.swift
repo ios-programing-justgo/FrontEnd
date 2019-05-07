@@ -15,26 +15,29 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var scoreTextField: UITextField!
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var submitReviewButton: UIButton!
-    
-    
+
+
     var commentArr = [rating]()
     var currentStore:String = "0"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        print("number of comments: \(commentArr.count)")
 
         if commentArr.count > 0 {
             currentStore = commentArr[0].count
         }
         let ref = Database.database().reference().child(currentStore).child("Ratings")
-       
-        
-        
+
+
+
     }
-    
+
     @IBAction func submitPressed(_ sender: Any) {
-        
-        
+
+
     }
 }
 
@@ -45,14 +48,16 @@ extension CommentViewController: UITableViewDataSource, UITableViewDelegate{
 
         return commentArr.count
     }
-    
-    
+
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RatingCell", for: indexPath) as! RatingCell
         let rating: rating
 
         rating = commentArr[indexPath.row]
-        
+        print(rating.rating,rating.comment)
+        print()
+
         cell.setItem(rating: rating)
         return cell
     }
