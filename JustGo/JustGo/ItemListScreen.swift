@@ -104,6 +104,8 @@ class ItemListScreen: UIViewController {
                     self.tableView.reloadData()
                 }
             }
+            
+            //FOR JIMMY: loop through storeArr to get the coordinates and store name
         })
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
