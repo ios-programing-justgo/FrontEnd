@@ -354,7 +354,7 @@
                                 </connections>
                             </tableView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dRC-Q1-efP">
-                                <rect key="frame" x="0.0" y="88" width="414" height="379"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="361"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
