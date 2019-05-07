@@ -19,6 +19,13 @@ class CommentViewController: UIViewController {
 
     var commentArr = [rating]()
     var currentStore:String = "0"
+    
+    struct uploadReview {
+        var starRating: String
+        var comment: String
+        var count: String
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +36,15 @@ class CommentViewController: UIViewController {
         if commentArr.count > 0 {
             currentStore = commentArr[0].count
         }
-        let ref = Database.database().reference().child(currentStore).child("Ratings")
-
-
-
+        
     }
 
     @IBAction func submitPressed(_ sender: Any) {
-
-
+        let ref = Database.database().reference().child(currentStore).child("Ratings")
+        let temp = uploadReview(starRating: scoreTextField.text!, comment: commentTextField.text!, count: currentStore)
+        ref.setValue(temp)
+        self.tableView.reloadData()
+        
     }
 }
 
