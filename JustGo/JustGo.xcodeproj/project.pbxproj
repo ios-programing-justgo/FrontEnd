@@ -28,6 +28,7 @@
 		D26012602281E86E004166BF /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D260125F2281E86E004166BF /* registerViewController.swift */; };
 		D26012622281E8F7004166BF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26012612281E8F7004166BF /* LoginViewController.swift */; };
 		D26012642281F818004166BF /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26012632281F818004166BF /* settingViewController.swift */; };
+		D2C0A49C22823B9B00DE7D7B /* rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0A49B22823B9B00DE7D7B /* rating.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		D260125F2281E86E004166BF /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		D26012612281E8F7004166BF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D26012632281F818004166BF /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
+		D2C0A49B22823B9B00DE7D7B /* rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rating.swift; sourceTree = "<group>"; };
 		EF556B002FE5B2C70EB18A7C /* Pods-JustGoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGoTests.release.xcconfig"; path = "Target Support Files/Pods-JustGoTests/Pods-JustGoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 		341A78D3227C0C0F00AC41FE /* JustGo */ = {
 			isa = PBXGroup;
 			children = (
+				D2C0A49B22823B9B00DE7D7B /* rating.swift */,
 				D21F5FF12280BA2E005FC634 /* GoogleService-Info.plist */,
 				341A7902227D353E00AC41FE /* Item.swift */,
 				341A7904227D355100AC41FE /* Store.swift */,
@@ -443,6 +446,7 @@
 				34373671228006AA00623D66 /* SeachPageViewController.swift in Sources */,
 				D26012622281E8F7004166BF /* LoginViewController.swift in Sources */,
 				D26012642281F818004166BF /* settingViewController.swift in Sources */,
+				D2C0A49C22823B9B00DE7D7B /* rating.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,8 @@ import MapKit
 import CoreLocation
 import FirebaseDatabase
 
+var reviewArr = [rating]()
+
 class customPin: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String?
@@ -58,11 +60,21 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
                 lon = Double(store.lon)!
                 pin = store.name
                 count = store.count
+                print(count)
                 
             }
         }
         
-        let ref = Database.database().reference().child(count)
+        let ref = Database.database().reference().child(count).child("Ratings")
+        ref.observe(.value) { (snapshot) in
+            for eachReview in snapshot.children.allObjects as! [DataSnapshot] {
+                let reviewObject = eachReview.value as? [String: AnyObject]
+                let reviewStar = reviewObject?["rating"]
+                let reviewComment = reviewObject?["comment"]
+                let new_Review = rating(rating: reviewStar as! String, comment: reviewComment as! String)
+                reviewArr.append(new_Review)
+            }
+        }
         
         //set up for mapView
         checkLocationServices()
@@ -114,6 +126,7 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
         //setting up other UI
         self.setUI()
     }
+    
     
     //setting up labels
     func setUI(){

@@ -91,7 +91,6 @@ class ItemListScreen: UIViewController {
                         }
                     })
                     let storeObject = store.value as? [String: AnyObject]
-
                     let storeName = storeObject?["store_Name"]
                     let storeID = storeObject?["ID"]
                     let storeAddress = storeObject?["address"]
