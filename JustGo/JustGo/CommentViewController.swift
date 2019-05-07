@@ -19,6 +19,7 @@ class CommentViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print("number of comments: \(commentArr.count)")
         
         
     }
