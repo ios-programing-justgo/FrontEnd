@@ -24,8 +24,6 @@ class CommentViewController: UIViewController {
         // Do any additional setup after loading the view.
         print("number of comments: \(commentArr.count)")
         
-        
-        
     }
     
     @IBAction func submitPressed(_ sender: Any) {
@@ -46,8 +44,7 @@ extension CommentViewController: UITableViewDataSource, UITableViewDelegate{
         let rating: rating
 
         rating = commentArr[indexPath.row]
-        print(rating.rating,rating.comment)
-        print()
+
         
         cell.setItem(rating: rating)
         return cell

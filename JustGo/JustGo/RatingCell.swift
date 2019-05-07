@@ -9,6 +9,8 @@
 import UIKit
 
 class RatingCell: UITableViewCell {
+    
+    
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
