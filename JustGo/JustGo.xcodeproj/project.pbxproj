@@ -22,6 +22,7 @@
 		341A790D227E9CD500AC41FE /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341A790C227E9CD500AC41FE /* LoginScreen.swift */; };
 		34373635227EC93500623D66 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34373634227EC93500623D66 /* DetailViewController.swift */; };
 		34373671228006AA00623D66 /* SeachPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34373670228006AA00623D66 /* SeachPageViewController.swift */; };
+		3465E1EF22823FDF00E8ED9C /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3465E1EE22823FDE00E8ED9C /* CommentViewController.swift */; };
 		49A39D4473541D3A809923CE /* Pods_JustGoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DBB8AA18C938E450B9B455 /* Pods_JustGoUITests.framework */; };
 		C62FCD38762FC981396CC9EA /* Pods_JustGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE3A35C5A5663992BF2F00A /* Pods_JustGo.framework */; };
 		D21F5FF22280BA2E005FC634 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D21F5FF12280BA2E005FC634 /* GoogleService-Info.plist */; };
@@ -71,6 +72,7 @@
 		341A790C227E9CD500AC41FE /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		34373634227EC93500623D66 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		34373670228006AA00623D66 /* SeachPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachPageViewController.swift; sourceTree = "<group>"; };
+		3465E1EE22823FDE00E8ED9C /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		38D20C1FA485DA2B62D0A89C /* Pods-JustGoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGoUITests.release.xcconfig"; path = "Target Support Files/Pods-JustGoUITests/Pods-JustGoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5EF2200905FA363F28A3AB69 /* Pods-JustGoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGoUITests.debug.xcconfig"; path = "Target Support Files/Pods-JustGoUITests/Pods-JustGoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		68850D08E580BEA0849A579F /* Pods_JustGoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustGoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 				341A790A227E9CB000AC41FE /* ItemListScreen.swift */,
 				341A7908227E9C2200AC41FE /* ItemCell.swift */,
 				34373634227EC93500623D66 /* DetailViewController.swift */,
+				3465E1EE22823FDE00E8ED9C /* CommentViewController.swift */,
 				341A78D6227C0C0F00AC41FE /* ViewController.swift */,
 				341A78D8227C0C0F00AC41FE /* Main.storyboard */,
 				D260125F2281E86E004166BF /* registerViewController.swift */,
@@ -431,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3465E1EF22823FDF00E8ED9C /* CommentViewController.swift in Sources */,
 				341A78D7227C0C0F00AC41FE /* ViewController.swift in Sources */,
 				341A7903227D353E00AC41FE /* Item.swift in Sources */,
 				341A7909227E9C2200AC41FE /* ItemCell.swift in Sources */,
