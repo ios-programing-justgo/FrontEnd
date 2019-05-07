@@ -8,21 +8,36 @@
 
 import UIKit
 import FirebaseDatabase
-
+import MapKit
+import CoreLocation
 
 var storeArr = [Store]()
 var itemArr = [Item]()
 var imageArr = [UIImage]()
 
 
+class custom_Pin: NSObject, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    
+    
+    init(pinTitle:String, location:CLLocationCoordinate2D) {
+        self.title = pinTitle
+        
+        self.coordinate = location
+    }
+}
+
+
 class ItemListScreen: UIViewController {
 
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
     
     
     var tempStoreArr = [Store]()
     var tempItemArr = [Item]()
-    
+    let locationManager = CLLocationManager()
     
     
     //setup search controller
@@ -107,6 +122,24 @@ class ItemListScreen: UIViewController {
             self.searchController.searchBar.becomeFirstResponder()
             print(storeArr.count)
             //FOR JIMMY: loop through storeArr to get the coordinates and store name
+            func createNewPin(name: String, latt: Double, long: Double){
+                let another_pin_coor = CLLocationCoordinate2D(latitude: latt, longitude: long)
+                let another_pin = custom_Pin(pinTitle: name, location: another_pin_coor)
+                self.mapView.addAnnotation(another_pin)
+            }
+            
+            let lat = 40.7308
+            let log = -73.9973
+            let location = CLLocationCoordinate2D(latitude: lat, longitude: log)
+            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: 1000, longitudinalMeters: 1000)
+            self.mapView.setRegion(region, animated: true)
+
+
+            
+            for curr_store in storeArr{
+                createNewPin(name: curr_store.name, latt: Double(curr_store.lat)! , long: Double(curr_store.lon)!)
+                print(curr_store.name)
+            }
 
         })
     }
