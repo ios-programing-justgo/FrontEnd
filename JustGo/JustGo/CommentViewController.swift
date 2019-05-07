@@ -14,7 +14,7 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var commentLabel: UITableView!
     @IBOutlet weak var tableView: UITableView!
     
-    var commentArr = [(Int,String)]()
+    var commentArr = [rating]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,33 @@ class CommentViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
+    }
+    
+}
+
+
+extension CommentViewController: UITableViewDataSource, UITableViewDelegate{
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return commentArr.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RatingCell", for: indexPath) as! RatingCell
+        let item: Item
+
+        item = itemArr[indexPath.row]
+        
+        cell.setItem(item: item)
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = itemArr[indexPath.row]
+        performSegue(withIdentifier: "ListToDetail", sender: item)
     }
     
 }
