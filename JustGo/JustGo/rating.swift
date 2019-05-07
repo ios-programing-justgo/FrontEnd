@@ -12,10 +12,12 @@ class rating: NSObject {
     
     var rating:String = "0"
     var comment:String = "Comment"
+    var count:String = "0"
     
-    init(rating:String,comment:String){
+    init(rating:String,comment:String,count:String){
         self.rating = rating
         self.comment = comment
+        self.count = count
     }
 
 }
