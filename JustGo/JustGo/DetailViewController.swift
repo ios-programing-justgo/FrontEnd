@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import FirebaseDatabase
 
 class customPin: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
@@ -34,6 +35,7 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
     var lat:Double = 0.0
     var lon:Double = 0.0
     var pin:String = ""
+    var count:String = "0"
     
 
     
@@ -48,14 +50,19 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
         super.viewDidLoad()
         title = item?.name
         
+    
         //get store coords
         for store in storeArr{
             if store.storeID == item?.storeID{
                 lat = Double(store.lat)!
                 lon = Double(store.lon)!
                 pin = store.name
+                count = store.count
+                
             }
         }
+        
+        let ref = Database.database().reference().child(count)
         
         //set up for mapView
         checkLocationServices()

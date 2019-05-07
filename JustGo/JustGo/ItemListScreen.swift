@@ -97,8 +97,9 @@ class ItemListScreen: UIViewController {
                     let storeAddress = storeObject?["address"]
                     let storeLatitude = storeObject?["store_Latitude"]
                     let storeLongtitude = storeObject?["store_Longtitude"]
+                    let storeCount = storeObject?["count"]
                     //create a new store
-                    let new_store = Store(name:storeName as! String, storeID:storeID as! String,address:storeAddress as! String, lat:storeLatitude as! String,lon:storeLongtitude as! String)
+                    let new_store = Store(name:storeName as! String, storeID:storeID as! String,address:storeAddress as! String, lat:storeLatitude as! String,lon:storeLongtitude as! String, count: storeCount as! String)
                     storeArr.append(new_store)
                     self.tableView.reloadData()
                 }
