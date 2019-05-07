@@ -242,8 +242,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <action selector="search:" destination="QBM-EM-ITw" eventType="touchUpInside" id="mEF-9W-5Hi"/>
                                     <segue destination="fod-9A-qgU" kind="show" identifier="SearchToList" id="eLA-tE-z6s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfk-JV-0y1">
+                                <rect key="frame" x="192" y="761" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Skip"/>
+                                <connections>
+                                    <segue destination="fod-9A-qgU" kind="show" id="Idc-AD-lce"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -275,7 +282,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8h-i9-ynR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936" y="208"/>
+            <point key="canvasLocation" x="-97" y="753"/>
         </scene>
         <!--Food List-->
         <scene sceneID="f0j-12-7Qg">
@@ -364,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCM-hU-Fay" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2402.898550724638" y="392.41071428571428"/>
+            <point key="canvasLocation" x="1939" y="753"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Yyz-Ta-L10">
@@ -450,7 +457,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3D-RQ-aAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3224.6376811594205" y="392.41071428571428"/>
+            <point key="canvasLocation" x="2938" y="753"/>
         </scene>
         <!--List-->
         <scene sceneID="YPu-hU-V5H">
@@ -469,7 +476,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1he-Pn-POC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1585" y="393"/>
+            <point key="canvasLocation" x="858" y="753"/>
         </scene>
         <!--Setting-->
         <scene sceneID="f4l-Ph-ODX">
@@ -507,6 +514,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Idc-AD-lce"/>
         <segue reference="Lk2-gZ-8X8"/>
     </inferredMetricsTieBreakers>
 </document>

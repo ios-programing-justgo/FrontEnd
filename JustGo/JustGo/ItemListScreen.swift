@@ -39,17 +39,11 @@ class ItemListScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(search_text)
         
         //setting up searchController and navigation bar
         self.setupSearchController()
         self.setupNavBar()
-        searchController.isActive = true
-        searchController.searchBar.becomeFirstResponder()
         
-        if !search_text.isEmpty {
-            filterArray(keyword: search_text)
-        }
 
         print("search_text is: \(search_text)")
         print("is search bar empty? \(searchBarIsEmpty())")
@@ -123,6 +117,7 @@ class ItemListScreen: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Food"
+        searchController.searchBar.becomeFirstResponder()
         searchController.isActive = true
         searchController.searchBar.text = search_text
         definesPresentationContext = true
