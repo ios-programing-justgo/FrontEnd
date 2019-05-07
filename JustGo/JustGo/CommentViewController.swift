@@ -13,6 +13,9 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UITableView!
     @IBOutlet weak var commentLabel: UITableView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var scoreTextField: UITextField!
+    @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var submitReviewButton: UIButton!
     
     var commentArr = [rating]()
     
@@ -24,6 +27,8 @@ class CommentViewController: UIViewController {
         
     }
     
+    @IBAction func submitPressed(_ sender: Any) {
+    }
 }
 
 
