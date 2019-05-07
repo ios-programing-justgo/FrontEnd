@@ -48,7 +48,6 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
         super.viewDidLoad()
         title = item?.name
         
-        
         //get store coords
         for store in storeArr{
             if store.storeID == item?.storeID{

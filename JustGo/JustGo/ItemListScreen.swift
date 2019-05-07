@@ -7,47 +7,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
-//structs for decoding JSON from url
-struct Product: Decodable{
-    let name:String
-    let price:String
-    let picture:String
-    let storeID:String
-    let image:String
-    
-    enum CodingKeys : String, CodingKey {
-        case name
-        case price
-        case picture
-        case storeID = "store_ID"
-        case image
-    
-        
-    }
-    
-}
-
-struct Shop: Decodable{
-    let drinks:[Product]
-    let food:[Product]
-    let id:String
-    let lat:String
-    let lon:String
-    let address:String
-    let name:String
-    
-    enum CodingKeys : String, CodingKey {
-        case name = "store_Name"
-        case address
-        case lat = "store_Latitude"
-        case lon = "store_Longtitude"
-        case id = "ID"
-        case drinks = "Drinks"
-        case food = "Food"
-        
-    }
-}
 
 var storeArr = [Store]()
 var itemArr = [Item]()
@@ -58,8 +19,11 @@ class ItemListScreen: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    //the url of json file
-    let url = "http://justgo1.serveo.net/"
+    
+    var tempStoreArr = [Store]()
+    var tempItemArr = [Item]()
+    
+    
     
     //setup search controller
     var search_text:String = ""
@@ -75,7 +39,7 @@ class ItemListScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         print(search_text)
+        print(search_text)
         
         //setting up searchController and navigation bar
         self.setupSearchController()
@@ -92,18 +56,61 @@ class ItemListScreen: UIViewController {
 
         
         print("program started")
-        getJson{
-            result in
-            storeArr = result.0
-            itemArr = result.1
-            //self.generateCells()
-            DispatchQueue.main.async{
-                self.tableView.reloadData()
-            }            
-           
-        }
-        
+        //use Firebase to load data for table
+        let ref = Database.database().reference()
+        ref.observe(.value, with: {(Snapshot) in
+            if (Snapshot.childrenCount > 0) {
+                for store in Snapshot.children.allObjects as! [DataSnapshot] {
+                    let childRef = ref.child(store.key)
+                    childRef.child("Food").observe(.value, with: { (Snapshot) in
+                        for eachfood in Snapshot.children.allObjects as! [DataSnapshot] {
+                            let foodObject = eachfood.value as? [String: AnyObject]
+                            let foodName = foodObject?["name"]
+                            let foodStoreID = foodObject?["store_ID"]
+                            let foodPrice = foodObject?["price"]
+                            let foodImage = foodObject?["image"]
+                            let foodPicture = foodObject?["picture"]
+                            //create a new food item and add to table
+                            let new_food = Item(name:foodName as! String, price:foodPrice as! String, picture:foodPicture as! String, storeID:foodStoreID as! String, image:UIImage(named:foodImage as! String)!)
+                            itemArr.append(new_food)
+                            self.tableView.reloadData()
+                        }
+                    })
+                    childRef.child("Drinks").observe(.value, with: {(Snapshot) in
+                        for eachDrink in Snapshot.children.allObjects as! [DataSnapshot] {
+                            let drinkObject = eachDrink.value as? [String: AnyObject]
+                            let drinkName = drinkObject?["name"]
+                            let drinkStoreID = drinkObject?["store_ID"]
+                            let drinkPrice = drinkObject?["price"]
+                            let drinkImage = drinkObject?["image"]
+                            let drinkPicture = drinkObject?["picture"]
+                            //create a new drink item and add to table
+                            let new_drink = Item(name:drinkName as! String,price:drinkPrice as! String, picture:drinkPicture as! String, storeID:drinkStoreID as! String, image:UIImage(named:drinkImage as! String)!)
+                        //  new_drink.getInfo()
+                            itemArr.append(new_drink)
+                        }
+                    })
+                    let storeObject = store.value as? [String: AnyObject]
+
+                    let storeName = storeObject?["store_Name"]
+                    let storeID = storeObject?["ID"]
+                    let storeAddress = storeObject?["address"]
+                    let storeLatitude = storeObject?["store_Latitude"]
+                    let storeLongtitude = storeObject?["store_Longtitude"]
+                    //create a new store
+                    let new_store = Store(name:storeName as! String, storeID:storeID as! String,address:storeAddress as! String, lat:storeLatitude as! String,lon:storeLongtitude as! String)
+                    storeArr.append(new_store)
+                    self.tableView.reloadData()
+                }
+            }
+        })
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                if segue.identifier == "ListToDetail"{
+                    let destination = segue.destination as! DetailViewController
+                    destination.item = sender as? Item
+                }
+            }
     //setting up search controller
     func setupSearchController(){
         
@@ -144,106 +151,6 @@ class ItemListScreen: UIViewController {
         })
         tableView.reloadData()
     }
-
-    
-    //get data from url
-    func getJson(_ completionHandler:  @escaping(([Store],[Item])) -> ()){
-       
-        let urlObj = URL(string: url)
-        var tempStoreArr = [Store]()
-        var tempItemArr = [Item]()
-        
-        var request: URLRequest = URLRequest(url: urlObj!)
-        request.cachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalCacheData
-        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "GET"
-        
-        
-        let task = URLSession.shared.dataTask(with: request){ (data,res,err) in
-            // ensure there is no error for this HTTP response
-            
-            
-            guard err == nil else {
-                print ("error: \(err!)")
-                return
-            }
-            
-            // ensure there is data returned from this HTTP response
-            guard let json = data else {
-                print("No data")
-                return
-            }
-            
-            guard json.count != 0 else{
-                print("zero bytes of data")
-                return
-            }
-            
-            //for error checking
-            //            do{
-            //                let stores = try JSONDecoder().decode([Shop].self, from: json)
-            //            }catch{
-            //                print("error \(error)")
-            //            }
-            
-            // Parse JSON into Dictionary that contains Array of Car struct using JSONDecoder
-            guard let stores = try? JSONDecoder().decode([Shop].self, from: json) else {
-                print(data!.count)
-                //print(res)
-                print("Error: Couldn't decode data into array of shops")
-                return
-            }
-            
-            //loop through the data and
-    
-     
-            for store in stores{
-                //loop through drinks items
-                var drinksArr = [Item]()
-                for drink in store.drinks{
-                    let new_drink = Item(name:drink.name,price:drink.price,picture:drink.picture,storeID:drink.storeID,image:UIImage(named:drink.image)!)
-                    //print(new_drink)
-                    //new_drink.getInfo()
-                    drinksArr.append(new_drink)
-                    
-                }
-                
-                //print(drinksArr)
-                //add these to the item array
-                tempItemArr += drinksArr
-                //loop through food items
-                var foodArr = [Item]()
-                for food in store.food{
-                    let new_food = Item(name:food.name,price:food.price,picture:food.picture,storeID:food.storeID,image:UIImage(named:food.image)!)
-                    //print(new_food)
-                    //new_food.getInfo()
-                    foodArr.append(new_food)
-                }
-                //print(foodArr)
-                tempItemArr += foodArr
-                
-                //create Store objects
-                let new_store = Store(name:store.name,storeID:store.id,drinks:drinksArr,food:foodArr,address:store.address,lat:store.lat,lon:store.lon)
-                
-                tempStoreArr.append(new_store)
-                
-            }
-            completionHandler((tempStoreArr,tempItemArr))
-        }
-        task.resume()
-        
-    }
-    
-
-    
-    //passing data from list view to detail page
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ListToDetail"{
-            let destination = segue.destination as! DetailViewController
-            destination.item = sender as? Item 
-        }
-    }
-
 }
 
 extension ItemListScreen: UITableViewDataSource, UITableViewDelegate{

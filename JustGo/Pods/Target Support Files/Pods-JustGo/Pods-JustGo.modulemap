@@ -1,0 +1,6 @@
+framework module Pods_JustGo {
+  umbrella header "Pods-JustGo-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1492B48B8F03B1F5BEAD4026 /* Pods_JustGoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68850D08E580BEA0849A579F /* Pods_JustGoTests.framework */; };
 		341A78D5227C0C0F00AC41FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341A78D4227C0C0F00AC41FE /* AppDelegate.swift */; };
 		341A78D7227C0C0F00AC41FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341A78D6227C0C0F00AC41FE /* ViewController.swift */; };
 		341A78DA227C0C0F00AC41FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341A78D8227C0C0F00AC41FE /* Main.storyboard */; };
@@ -21,6 +22,9 @@
 		341A790D227E9CD500AC41FE /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341A790C227E9CD500AC41FE /* LoginScreen.swift */; };
 		34373635227EC93500623D66 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34373634227EC93500623D66 /* DetailViewController.swift */; };
 		34373671228006AA00623D66 /* SeachPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34373670228006AA00623D66 /* SeachPageViewController.swift */; };
+		49A39D4473541D3A809923CE /* Pods_JustGoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DBB8AA18C938E450B9B455 /* Pods_JustGoUITests.framework */; };
+		C62FCD38762FC981396CC9EA /* Pods_JustGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE3A35C5A5663992BF2F00A /* Pods_JustGo.framework */; };
+		D21F5FF22280BA2E005FC634 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D21F5FF12280BA2E005FC634 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		095293A6906ADEF8FCAB5C2F /* Pods-JustGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGo.release.xcconfig"; path = "Target Support Files/Pods-JustGo/Pods-JustGo.release.xcconfig"; sourceTree = "<group>"; };
+		0C9F8DCC3AB1760E78A4782C /* Pods-JustGoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGoTests.debug.xcconfig"; path = "Target Support Files/Pods-JustGoTests/Pods-JustGoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		32D5AEDD6017EF6E3D1E3B8E /* Pods-JustGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGo.debug.xcconfig"; path = "Target Support Files/Pods-JustGo/Pods-JustGo.debug.xcconfig"; sourceTree = "<group>"; };
 		341A78D1227C0C0F00AC41FE /* JustGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		341A78D4227C0C0F00AC41FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		341A78D6227C0C0F00AC41FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +68,13 @@
 		341A790C227E9CD500AC41FE /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		34373634227EC93500623D66 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		34373670228006AA00623D66 /* SeachPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachPageViewController.swift; sourceTree = "<group>"; };
+		38D20C1FA485DA2B62D0A89C /* Pods-JustGoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGoUITests.release.xcconfig"; path = "Target Support Files/Pods-JustGoUITests/Pods-JustGoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5EF2200905FA363F28A3AB69 /* Pods-JustGoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGoUITests.debug.xcconfig"; path = "Target Support Files/Pods-JustGoUITests/Pods-JustGoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		68850D08E580BEA0849A579F /* Pods_JustGoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustGoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8DBB8AA18C938E450B9B455 /* Pods_JustGoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustGoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDE3A35C5A5663992BF2F00A /* Pods_JustGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D21F5FF12280BA2E005FC634 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF556B002FE5B2C70EB18A7C /* Pods-JustGoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGoTests.release.xcconfig"; path = "Target Support Files/Pods-JustGoTests/Pods-JustGoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62FCD38762FC981396CC9EA /* Pods_JustGo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1492B48B8F03B1F5BEAD4026 /* Pods_JustGoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +98,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A39D4473541D3A809923CE /* Pods_JustGoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28B87EC08FC5700026452538 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32D5AEDD6017EF6E3D1E3B8E /* Pods-JustGo.debug.xcconfig */,
+				095293A6906ADEF8FCAB5C2F /* Pods-JustGo.release.xcconfig */,
+				0C9F8DCC3AB1760E78A4782C /* Pods-JustGoTests.debug.xcconfig */,
+				EF556B002FE5B2C70EB18A7C /* Pods-JustGoTests.release.xcconfig */,
+				5EF2200905FA363F28A3AB69 /* Pods-JustGoUITests.debug.xcconfig */,
+				38D20C1FA485DA2B62D0A89C /* Pods-JustGoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		341A78C8227C0C0F00AC41FE = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +126,8 @@
 				341A78E8227C0C1100AC41FE /* JustGoTests */,
 				341A78F3227C0C1200AC41FE /* JustGoUITests */,
 				341A78D2227C0C0F00AC41FE /* Products */,
+				28B87EC08FC5700026452538 /* Pods */,
+				36C2F4B0A133ED3B4F556EAA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +144,7 @@
 		341A78D3227C0C0F00AC41FE /* JustGo */ = {
 			isa = PBXGroup;
 			children = (
+				D21F5FF12280BA2E005FC634 /* GoogleService-Info.plist */,
 				341A7902227D353E00AC41FE /* Item.swift */,
 				341A7904227D355100AC41FE /* Store.swift */,
 				341A78D4227C0C0F00AC41FE /* AppDelegate.swift */,
@@ -146,6 +180,16 @@
 			path = JustGoUITests;
 			sourceTree = "<group>";
 		};
+		36C2F4B0A133ED3B4F556EAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDE3A35C5A5663992BF2F00A /* Pods_JustGo.framework */,
+				68850D08E580BEA0849A579F /* Pods_JustGoTests.framework */,
+				A8DBB8AA18C938E450B9B455 /* Pods_JustGoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 341A78F9227C0C1200AC41FE /* Build configuration list for PBXNativeTarget "JustGo" */;
 			buildPhases = (
+				F019A5E690D9F65388BFD6E4 /* [CP] Check Pods Manifest.lock */,
 				341A78CD227C0C0F00AC41FE /* Sources */,
 				341A78CE227C0C0F00AC41FE /* Frameworks */,
 				341A78CF227C0C0F00AC41FE /* Resources */,
+				ED4FCA4A0DDEF78E0DD3728B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,6 +216,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 341A78FC227C0C1200AC41FE /* Build configuration list for PBXNativeTarget "JustGoTests" */;
 			buildPhases = (
+				5D9F0D1D83B0F495EB01E54E /* [CP] Check Pods Manifest.lock */,
 				341A78E1227C0C1100AC41FE /* Sources */,
 				341A78E2227C0C1100AC41FE /* Frameworks */,
 				341A78E3227C0C1100AC41FE /* Resources */,
@@ -188,6 +235,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 341A78FF227C0C1200AC41FE /* Build configuration list for PBXNativeTarget "JustGoUITests" */;
 			buildPhases = (
+				3859E435B0BBC6F94CB140AC /* [CP] Check Pods Manifest.lock */,
 				341A78EC227C0C1200AC41FE /* Sources */,
 				341A78ED227C0C1200AC41FE /* Frameworks */,
 				341A78EE227C0C1200AC41FE /* Resources */,
@@ -251,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				341A78DF227C0C1100AC41FE /* LaunchScreen.storyboard in Resources */,
+				D21F5FF22280BA2E005FC634 /* GoogleService-Info.plist in Resources */,
 				341A78DC227C0C1100AC41FE /* Assets.xcassets in Resources */,
 				341A78DA227C0C0F00AC41FE /* Main.storyboard in Resources */,
 			);
@@ -271,6 +320,101 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3859E435B0BBC6F94CB140AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JustGoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D9F0D1D83B0F495EB01E54E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JustGoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED4FCA4A0DDEF78E0DD3728B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JustGo/Pods-JustGo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JustGo/Pods-JustGo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F019A5E690D9F65388BFD6E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JustGo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		341A78CD227C0C0F00AC41FE /* Sources */ = {
@@ -458,10 +602,11 @@
 		};
 		341A78FA227C0C1200AC41FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32D5AEDD6017EF6E3D1E3B8E /* Pods-JustGo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BTT5PX2LP4;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JustGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -476,10 +621,11 @@
 		};
 		341A78FB227C0C1200AC41FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 095293A6906ADEF8FCAB5C2F /* Pods-JustGo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BTT5PX2LP4;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JustGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,6 +640,7 @@
 		};
 		341A78FD227C0C1200AC41FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C9F8DCC3AB1760E78A4782C /* Pods-JustGoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -514,6 +661,7 @@
 		};
 		341A78FE227C0C1200AC41FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF556B002FE5B2C70EB18A7C /* Pods-JustGoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -534,6 +682,7 @@
 		};
 		341A7900227C0C1200AC41FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EF2200905FA363F28A3AB69 /* Pods-JustGoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -553,6 +702,7 @@
 		};
 		341A7901227C0C1200AC41FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38D20C1FA485DA2B62D0A89C /* Pods-JustGoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
