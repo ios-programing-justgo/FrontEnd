@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class CommentViewController: UIViewController {
 
@@ -17,16 +18,23 @@ class CommentViewController: UIViewController {
     
     
     var commentArr = [rating]()
+    var currentStore:String = "0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if commentArr.count > 0 {
+            currentStore = commentArr[0].count
+        }
+        let ref = Database.database().reference().child(currentStore).child("Ratings")
+       
         
         
     }
     
     @IBAction func submitPressed(_ sender: Any) {
+        
+        
     }
 }
 
