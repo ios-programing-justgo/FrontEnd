@@ -11,6 +11,8 @@ import MapKit
 import CoreLocation
 import FirebaseDatabase
 
+var reviewArr = [rating]()
+
 class customPin: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String?
@@ -58,11 +60,22 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
                 lon = Double(store.lon)!
                 pin = store.name
                 count = store.count
+                print(count)
                 
             }
         }
         
-        let ref = Database.database().reference().child(count)
+        let ref = Database.database().reference().child(count).child("Ratings")
+        ref.observe(.value) { (snapshot) in
+            for eachReview in snapshot.children.allObjects as! [DataSnapshot] {
+                let reviewObject = eachReview.value as? [String: AnyObject]
+                let reviewStar = reviewObject?["rating"]
+                let reviewComment = reviewObject?["comment"]
+                let reviewCount = reviewObject?["count"]
+                let new_Review = rating(rating: reviewStar as! String, comment: reviewComment as! String, count:reviewCount as! String )
+                reviewArr.append(new_Review)
+            }
+        }
         
         //set up for mapView
         checkLocationServices()
@@ -115,6 +128,7 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
         self.setUI()
     }
     
+    
     //setting up labels
     func setUI(){
         
@@ -124,11 +138,21 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
         
         for store in storeArr{
             if store.storeID == item?.storeID{
-    
                 detailStoreAddressLabel.text = store.address
             }
         }
     }
+    
+    //passing data to commentVC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailToComment"{
+            let destination = segue.destination as! CommentViewController
+            
+            destination.commentArr = [sender as! rating]
+    
+        }
+    }
+    
     
     //MARK:- MapKit delegates
 

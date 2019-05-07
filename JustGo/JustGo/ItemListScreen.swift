@@ -97,25 +97,29 @@ class ItemListScreen: UIViewController {
                         }
                     })
                     let storeObject = store.value as? [String: AnyObject]
-
                     let storeName = storeObject?["store_Name"]
                     let storeID = storeObject?["ID"]
                     let storeAddress = storeObject?["address"]
                     let storeLatitude = storeObject?["store_Latitude"]
                     let storeLongtitude = storeObject?["store_Longtitude"]
                     let storeCount = storeObject?["count"]
-                    print(storeCount)
+                    //print(storeCount)
                     //create a new store
                     let new_store = Store(name:storeName as! String, storeID:storeID as! String,address:storeAddress as! String, lat:storeLatitude as! String,lon:storeLongtitude as! String, count: storeCount as! String)
                     
                     storeArr.append(new_store)
                     self.tableView.reloadData()
                     
-                    //searchController becomes first responder
-                    self.searchController.searchBar.becomeFirstResponder()
+                    //perform search when everything is loaded!!!!
+                    //
+                    //self.searchController.searchBar.becomeFirstResponder()
+                    
                     
                 }
             }
+            self.searchController.searchBar.text = self.search_text
+            
+            self.searchController.searchBar.becomeFirstResponder()
             print(storeArr.count)
             //FOR JIMMY: loop through storeArr to get the coordinates and store name
             func createNewPin(name: String, latt: Double, long: Double){
@@ -151,9 +155,6 @@ class ItemListScreen: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Food"
-        
-
-        searchController.searchBar.text = search_text
         definesPresentationContext = true
     }
     
@@ -180,12 +181,12 @@ class ItemListScreen: UIViewController {
         return searchController.isActive && !searchBarIsEmpty()
     }
 
-    func filterArray(keyword:String){
-        filteredItems = itemArr.filter({( item : Item) -> Bool in
-            return item.name.lowercased().contains(keyword.lowercased())
-        })
-        tableView.reloadData()
-    }
+//    func filterArray(keyword:String){
+//        filteredItems = itemArr.filter({( item : Item) -> Bool in
+//            return item.name.lowercased().contains(keyword.lowercased())
+//        })
+//        tableView.reloadData()
+//    }
 }
 
 extension ItemListScreen: UITableViewDataSource, UITableViewDelegate{
