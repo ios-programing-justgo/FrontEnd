@@ -26,30 +26,21 @@ class ItemListScreen: UIViewController {
     
     
     //setup search controller
-    var search_text:String = ""
+    var search_text:String?
     let searchController = UISearchController(searchResultsController: nil)
     
     
     //for searching results
     var filteredItems = [Item]()
-    var homepageFilteredItems = [Item]()
-
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(search_text)
         
         //setting up searchController and navigation bar
         self.setupSearchController()
         self.setupNavBar()
-        searchController.isActive = true
-        searchController.searchBar.becomeFirstResponder()
         
-        if !search_text.isEmpty {
-            filterArray(keyword: search_text)
-        }
 
         print("search_text is: \(search_text)")
         print("is search bar empty? \(searchBarIsEmpty())")
@@ -97,14 +88,21 @@ class ItemListScreen: UIViewController {
                     let storeLatitude = storeObject?["store_Latitude"]
                     let storeLongtitude = storeObject?["store_Longtitude"]
                     let storeCount = storeObject?["count"]
+                    print(storeCount)
                     //create a new store
                     let new_store = Store(name:storeName as! String, storeID:storeID as! String,address:storeAddress as! String, lat:storeLatitude as! String,lon:storeLongtitude as! String, count: storeCount as! String)
+                    
                     storeArr.append(new_store)
                     self.tableView.reloadData()
+                    
+                    //searchController becomes first responder
+                    self.searchController.searchBar.becomeFirstResponder()
+                    
                 }
             }
-            
+            print(storeArr.count)
             //FOR JIMMY: loop through storeArr to get the coordinates and store name
+
         })
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -119,7 +117,8 @@ class ItemListScreen: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Food"
-        searchController.isActive = true
+        
+
         searchController.searchBar.text = search_text
         definesPresentationContext = true
     }
