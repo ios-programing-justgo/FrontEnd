@@ -88,18 +88,23 @@ class ItemListScreen: UIViewController {
                     let storeLatitude = storeObject?["store_Latitude"]
                     let storeLongtitude = storeObject?["store_Longtitude"]
                     let storeCount = storeObject?["count"]
-                    print(storeCount)
+                    //print(storeCount)
                     //create a new store
                     let new_store = Store(name:storeName as! String, storeID:storeID as! String,address:storeAddress as! String, lat:storeLatitude as! String,lon:storeLongtitude as! String, count: storeCount as! String)
                     
                     storeArr.append(new_store)
                     self.tableView.reloadData()
                     
-                    //searchController becomes first responder
-                    self.searchController.searchBar.becomeFirstResponder()
+                    //perform search when everything is loaded!!!!
+                    //
+                    //self.searchController.searchBar.becomeFirstResponder()
+                    
                     
                 }
             }
+            self.searchController.searchBar.text = self.search_text
+            
+            self.searchController.searchBar.becomeFirstResponder()
             print(storeArr.count)
             //FOR JIMMY: loop through storeArr to get the coordinates and store name
 
@@ -119,7 +124,7 @@ class ItemListScreen: UIViewController {
         searchController.searchBar.placeholder = "Search Food"
         
 
-        searchController.searchBar.text = search_text
+       
         definesPresentationContext = true
     }
     
