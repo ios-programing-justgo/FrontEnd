@@ -25,6 +25,9 @@
 		49A39D4473541D3A809923CE /* Pods_JustGoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DBB8AA18C938E450B9B455 /* Pods_JustGoUITests.framework */; };
 		C62FCD38762FC981396CC9EA /* Pods_JustGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE3A35C5A5663992BF2F00A /* Pods_JustGo.framework */; };
 		D21F5FF22280BA2E005FC634 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D21F5FF12280BA2E005FC634 /* GoogleService-Info.plist */; };
+		D26012602281E86E004166BF /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D260125F2281E86E004166BF /* registerViewController.swift */; };
+		D26012622281E8F7004166BF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26012612281E8F7004166BF /* LoginViewController.swift */; };
+		D26012642281F818004166BF /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26012632281F818004166BF /* settingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		A8DBB8AA18C938E450B9B455 /* Pods_JustGoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustGoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE3A35C5A5663992BF2F00A /* Pods_JustGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D21F5FF12280BA2E005FC634 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D260125F2281E86E004166BF /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
+		D26012612281E8F7004166BF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D26012632281F818004166BF /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		EF556B002FE5B2C70EB18A7C /* Pods-JustGoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGoTests.release.xcconfig"; path = "Target Support Files/Pods-JustGoTests/Pods-JustGoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,13 +121,13 @@
 				5EF2200905FA363F28A3AB69 /* Pods-JustGoUITests.debug.xcconfig */,
 				38D20C1FA485DA2B62D0A89C /* Pods-JustGoUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		341A78C8227C0C0F00AC41FE = {
 			isa = PBXGroup;
 			children = (
+				D26012632281F818004166BF /* settingViewController.swift */,
 				341A78D3227C0C0F00AC41FE /* JustGo */,
 				341A78E8227C0C1100AC41FE /* JustGoTests */,
 				341A78F3227C0C1200AC41FE /* JustGoUITests */,
@@ -155,6 +161,8 @@
 				34373634227EC93500623D66 /* DetailViewController.swift */,
 				341A78D6227C0C0F00AC41FE /* ViewController.swift */,
 				341A78D8227C0C0F00AC41FE /* Main.storyboard */,
+				D260125F2281E86E004166BF /* registerViewController.swift */,
+				D26012612281E8F7004166BF /* LoginViewController.swift */,
 				341A78DB227C0C1100AC41FE /* Assets.xcassets */,
 				341A78DD227C0C1100AC41FE /* LaunchScreen.storyboard */,
 				341A78E0227C0C1100AC41FE /* Info.plist */,
@@ -375,6 +383,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-JustGo/Pods-JustGo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -383,6 +392,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -424,12 +434,15 @@
 				341A78D7227C0C0F00AC41FE /* ViewController.swift in Sources */,
 				341A7903227D353E00AC41FE /* Item.swift in Sources */,
 				341A7909227E9C2200AC41FE /* ItemCell.swift in Sources */,
+				D26012602281E86E004166BF /* registerViewController.swift in Sources */,
 				341A78D5227C0C0F00AC41FE /* AppDelegate.swift in Sources */,
 				341A790D227E9CD500AC41FE /* LoginScreen.swift in Sources */,
 				341A790B227E9CB000AC41FE /* ItemListScreen.swift in Sources */,
 				341A7905227D355100AC41FE /* Store.swift in Sources */,
 				34373635227EC93500623D66 /* DetailViewController.swift in Sources */,
 				34373671228006AA00623D66 /* SeachPageViewController.swift in Sources */,
+				D26012622281E8F7004166BF /* LoginViewController.swift in Sources */,
+				D26012642281F818004166BF /* settingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

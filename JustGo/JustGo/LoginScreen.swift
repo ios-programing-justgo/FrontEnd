@@ -16,8 +16,4 @@ class LoginScreen: UIViewController {
 
         logoImageView.image = UIImage(named:"logo")
     }
-    
-
-
-
 }
