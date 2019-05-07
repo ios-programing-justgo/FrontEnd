@@ -26,18 +26,7 @@ class SeachPageViewController: UIViewController {
             let navVC = tabBarVC.viewControllers![0] as! UINavigationController
             let destination = navVC.viewControllers.first as! ItemListScreen
             destination.search_text = searchTextField.text!
-  
         }
-        
-    }
-    
-
-    @IBAction func search(_ sender: Any) {
-        //passing the keyword in textfield to ItemList
-        toPass = searchTextField.text!
-        print("the text field text is: \(toPass)")
-        performSegue(withIdentifier: "SearchToList", sender: self)
-        
     }
     
 }
