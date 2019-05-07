@@ -26,15 +26,12 @@ class ItemListScreen: UIViewController {
     
     
     //setup search controller
-    var search_text:String = ""
+    var search_text:String?
     let searchController = UISearchController(searchResultsController: nil)
     
     
     //for searching results
     var filteredItems = [Item]()
-    var homepageFilteredItems = [Item]()
-
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +95,10 @@ class ItemListScreen: UIViewController {
                     
                     storeArr.append(new_store)
                     self.tableView.reloadData()
+                    
+                    //searchController becomes first responder
+                    self.searchController.searchBar.becomeFirstResponder()
+                    
                 }
             }
             print(storeArr.count)
@@ -117,8 +118,8 @@ class ItemListScreen: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Food"
-        searchController.searchBar.becomeFirstResponder()
-        searchController.isActive = true
+        
+
         searchController.searchBar.text = search_text
         definesPresentationContext = true
     }
