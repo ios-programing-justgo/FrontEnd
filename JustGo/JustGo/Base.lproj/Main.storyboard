@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,6 +71,7 @@
                                 </state>
                                 <connections>
                                     <action selector="LoginPressed:" destination="v5n-5I-pZ6" eventType="touchUpInside" id="Eky-1J-nRa"/>
+                                    <segue destination="QBM-EM-ITw" kind="show" identifier="LoginToHome" id="Lk2-gZ-8X8"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZH5-PW-9ZV">
@@ -117,7 +118,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="ZH5-PW-9ZV" id="Z4H-Se-UFi"/>
                         <outlet property="passwordTextField" destination="T06-qe-wlR" id="90X-OM-5lS"/>
-                        <segue destination="fod-9A-qgU" kind="show" identifier="LoginToHome" id="tHL-vI-Oih"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thL-1d-oRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -184,6 +184,7 @@
                                 </state>
                                 <connections>
                                     <action selector="registerPresseded:" destination="WfS-y7-zKu" eventType="touchUpInside" id="aCc-jj-lyc"/>
+                                    <segue destination="QBM-EM-ITw" kind="show" identifier="RegisterToHome" id="jr0-1b-DT6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIh-Am-qCQ">
@@ -203,7 +204,6 @@
                         <outlet property="passwordTextField" destination="DWZ-Me-5Xw" id="IR2-s3-31n"/>
                         <outlet property="registerButton" destination="1tc-x0-tcW" id="xky-ZB-7Kl"/>
                         <outlet property="retypePasswordTextField" destination="PLZ-3q-oBS" id="RhN-cB-rjI"/>
-                        <segue destination="fod-9A-qgU" kind="show" identifier="RegisterToHome" id="aT0-Jb-GUN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95c-Bi-KvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,7 +238,15 @@
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="search:" destination="QBM-EM-ITw" eventType="touchUpInside" id="aCc-m8-kmW"/>
-                                    <segue destination="cVC-Z4-yns" kind="show" identifier="SearchToList" id="ACf-aL-pXD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGw-EK-06h">
+                                <rect key="frame" x="168" y="484" width="79" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="search:" destination="QBM-EM-ITw" eventType="touchUpInside" id="mEF-9W-5Hi"/>
+                                    <segue destination="fod-9A-qgU" kind="show" identifier="SearchToList" id="eLA-tE-z6s"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -252,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUg-Yd-DB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1582.608695652174" y="-358.25892857142856"/>
+            <point key="canvasLocation" x="-81" y="208"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sdJ-Su-6TJ">
@@ -264,14 +272,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="QBM-EM-ITw" kind="relationship" relationship="viewControllers" id="hN3-5Q-t7d"/>
                         <segue destination="cVC-Z4-yns" kind="relationship" relationship="viewControllers" id="hKD-at-1EU"/>
                         <segue destination="hDy-aK-549" kind="relationship" relationship="viewControllers" id="T5z-He-P3Q"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8h-i9-ynR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="177" y="186"/>
+            <point key="canvasLocation" x="936" y="208"/>
         </scene>
         <!--Food List-->
         <scene sceneID="f0j-12-7Qg">
@@ -503,7 +510,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ACf-aL-pXD"/>
-        <segue reference="tHL-vI-Oih"/>
+        <segue reference="Lk2-gZ-8X8"/>
     </inferredMetricsTieBreakers>
 </document>
