@@ -71,7 +71,8 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
                 let reviewObject = eachReview.value as? [String: AnyObject]
                 let reviewStar = reviewObject?["rating"]
                 let reviewComment = reviewObject?["comment"]
-                let new_Review = rating(rating: reviewStar as! String, comment: reviewComment as! String)
+                let reviewCount = reviewObject?["count"]
+                let new_Review = rating(rating: reviewStar as! String, comment: reviewComment as! String, count:reviewCount as! String )
                 reviewArr.append(new_Review)
             }
         }
@@ -147,7 +148,7 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
         if segue.identifier == "DetailToComment"{
             let destination = segue.destination as! CommentViewController
             
-            //pass data here
+            destination.commentArr = [sender as! rating]
     
         }
     }
