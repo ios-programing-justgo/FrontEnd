@@ -18,7 +18,6 @@ class CommentViewController: UIViewController {
 
 
     var commentArr = [rating]()
-    var storeCount:String?
     var currentStore:String = "0"
 
     
