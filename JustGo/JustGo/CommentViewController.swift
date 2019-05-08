@@ -17,38 +17,37 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var submitReviewButton: UIButton!
 
 
-    var commentArr = [rating]()
+    var inputCount:String?
+    
     var currentStore:String = "0"
     
-<<<<<<< HEAD
-    struct uploadReview {
-        var starRating: String
-        var comment: String
-        var count: String
-    }
-
-=======
->>>>>>> bad7a2f394b6b55d3b0935dde64dffc67597f8bc
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let ref = Database.database().reference().child(inputCount!).child("Ratings")
+            ref.observe(.value) { (snapshot) in
+                for eachReview in snapshot.children.allObjects as! [DataSnapshot] {
+                    let reviewObject = eachReview.value as? [String: AnyObject]
+                    let reviewStar = reviewObject?["rating"]
+                    let reviewComment = reviewObject?["comment"]
+                    let reviewCount = reviewObject?["count"]
+                    let new_Review = rating(rating: reviewStar as! String, comment: reviewComment as! String, count:reviewCount as! String )
+                    reviewArr.append(new_Review)
+                    }
+                }
 
         // Do any additional setup after loading the view.
         print("number of comments: \(commentArr.count)")
-<<<<<<< HEAD
         
         print("program started")
         //use Firebase to load data for table
-
-
-=======
 
 
         if commentArr.count > 0 {
             currentStore = commentArr[0].count
         }
 
->>>>>>> bad7a2f394b6b55d3b0935dde64dffc67597f8bc
     }
 
     @IBAction func submitPressed(_ sender: Any) {
@@ -56,7 +55,7 @@ class CommentViewController: UIViewController {
         let number = Int.random(in: 0 ..< 100000000)
         let dict : NSDictionary = [ "comment" : commentTextField.text!, "count" : currentStore, "rating" : scoreTextField.text!]
         ref.child(String(number)).setValue(dict)
-        self.tableView.reloadData()
+//        self.tableView.reloadData()
         
     }
 }
@@ -74,14 +73,11 @@ extension CommentViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "RatingCell", for: indexPath) as! RatingCell
         let rating: rating
         rating = commentArr[indexPath.row]
-<<<<<<< HEAD
-=======
 
 
         print(rating.rating,rating.comment)
         print()
 
->>>>>>> bad7a2f394b6b55d3b0935dde64dffc67597f8bc
         cell.setItem(rating: rating)
         return cell
     }

@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 import FirebaseDatabase
 
-var reviewArr = [rating]()
+//var reviewArr = [rating]()
 
 class customPin: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
@@ -65,17 +65,17 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
             }
         }
         
-        let ref = Database.database().reference().child(count).child("Ratings")
-        ref.observe(.value) { (snapshot) in
-            for eachReview in snapshot.children.allObjects as! [DataSnapshot] {
-                let reviewObject = eachReview.value as? [String: AnyObject]
-                let reviewStar = reviewObject?["rating"]
-                let reviewComment = reviewObject?["comment"]
-                let reviewCount = reviewObject?["count"]
-                let new_Review = rating(rating: reviewStar as! String, comment: reviewComment as! String, count:reviewCount as! String )
-                reviewArr.append(new_Review)
-            }
-        }
+//        let ref = Database.database().reference().child(count).child("Ratings")
+//        ref.observe(.value) { (snapshot) in
+//            for eachReview in snapshot.children.allObjects as! [DataSnapshot] {
+//                let reviewObject = eachReview.value as? [String: AnyObject]
+//                let reviewStar = reviewObject?["rating"]
+//                let reviewComment = reviewObject?["comment"]
+//                let reviewCount = reviewObject?["count"]
+//                let new_Review = rating(rating: reviewStar as! String, comment: reviewComment as! String, count:reviewCount as! String )
+//                reviewArr.append(new_Review)
+//            }
+//        }
         
         //set up for mapView
         checkLocationServices()
@@ -148,7 +148,7 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
         if segue.identifier == "DetailToComment"{
             let destination = segue.destination as! CommentViewController
             
-            destination.commentArr = reviewArr
+            destination.inputCount = count
     
         }
     }
