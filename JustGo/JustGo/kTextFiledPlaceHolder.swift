@@ -48,7 +48,7 @@ class kTextFiledPlaceHolder: UITextField {
     @IBInspectable var placeHolderColor: UIColor? = UIColor.lightGray {
         didSet {
             self.attributedPlaceholder = NSAttributedString(string: self.placeholder! as String ,
-                                                            attributes:[NSForegroundColorAttributeName: placeHolderColor!])
+                                                            attributes:[NSAttributedString.Key.foregroundColor: placeHolderColor!])
         }
     }
     override internal var placeholder:String?  {
@@ -56,8 +56,8 @@ class kTextFiledPlaceHolder: UITextField {
             //  NSLog("placeholder = \(placeholder)")
         }
         willSet {
-            let atts  = [NSForegroundColorAttributeName: UIColor.lightGray, NSFontAttributeName: UIFont.labelFontSize] as [String : Any]
-            self.attributedPlaceholder = NSAttributedString(string: newValue!, attributes:atts)
+//            let atts  = [NSForegroundColorAttributeName.rawValue: UIColor.lightGray, NSFontAttributeName: UIFont.labelFontSize] as [String : Any]
+//            self.attributedPlaceholder = NSAttributedString(string: newValue!, attributes:atts)
             self.EnableMaterialPlaceHolder(enableMaterialPlaceHolder: self.enableMaterialPlaceHolder)
         }
         
@@ -75,7 +75,7 @@ class kTextFiledPlaceHolder: UITextField {
             
         }
     }
-    func textFieldDidChange(){
+    @objc func textFieldDidChange(){
         if self.enableMaterialPlaceHolder {
             if (self.text == nil) || (self.text?.characters.count)! > 0 {
                 self.lblPlaceHolder.alpha = 1
@@ -113,9 +113,9 @@ class kTextFiledPlaceHolder: UITextField {
         //self.lblPlaceHolder.sizeToFit()
     }
     func placeholderText(_ placeholder: NSString){
-        let atts  = [NSForegroundColorAttributeName: UIColor.lightGray, NSFontAttributeName: UIFont.labelFontSize] as [String : Any]
-        self.attributedPlaceholder = NSAttributedString(string: placeholder as String , attributes:atts)
-        self.EnableMaterialPlaceHolder(enableMaterialPlaceHolder: self.enableMaterialPlaceHolder)
+//        let atts  = [NSAttributedString.Key.foregroundColor.rawValue: UIColor.lightGray, NSAttributedString.Key.font: UIFont.labelFontSize] as! [String : Any]
+//        self.attributedPlaceholder = NSAttributedString(string: placeholder as String , attributes:atts)
+//        self.EnableMaterialPlaceHolder(enableMaterialPlaceHolder: self.enableMaterialPlaceHolder)
     }
     override func becomeFirstResponder()->(Bool){
         let returnValue = super.becomeFirstResponder()

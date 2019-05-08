@@ -52,6 +52,8 @@ class CommentViewController: UIViewController {
         let number = Int.random(in: 0 ..< 100000000)
         let dict : NSDictionary = [ "comment" : commentTextField.text!, "count" : currentStore, "rating" : scoreTextField.text!]
         ref.child(String(number)).setValue(dict)
+        commentTextField.text = ""
+        scoreTextField.text = ""
 //        self.tableView.reloadData()
 
     }
