@@ -217,7 +217,22 @@ extension ItemListScreen: UITableViewDataSource, UITableViewDelegate{
 
 extension ItemListScreen: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
+    func createNewPin(name: String, latt: Double, long: Double){
+        let another_pin_coor = CLLocationCoordinate2D(latitude: latt, longitude: long)
+        let another_pin = custom_Pin(pinTitle: name, location: another_pin_coor)
+        self.mapView.addAnnotation(another_pin)
+    }
+
+    
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        for item in self.filteredItems{
+            for store in storeArr{
+                if store.storeID == item.storeID{
+                    createNewPin(name: store.name, latt: Double(store.lat)!, long: Double(store.lon)!)
+                }
+            }
+        }
     }
 }
