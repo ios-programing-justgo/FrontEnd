@@ -66,6 +66,8 @@ class ItemListScreen: UIViewController {
         let ref = Database.database().reference()
         ref.observe(.value, with: {(Snapshot) in
             if (Snapshot.childrenCount > 0) {
+                storeArr = []
+                itemArr = []
                 for store in Snapshot.children.allObjects as! [DataSnapshot] {
                     let childRef = ref.child(store.key)
                     childRef.child("Food").observe(.value, with: { (Snapshot) in
