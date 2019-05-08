@@ -28,6 +28,7 @@ class CommentViewController: UIViewController {
 
         let ref = Database.database().reference().child(inputCount!).child("Ratings")
             ref.observe(.value) { (snapshot) in
+                reviewArr = []
                 for eachReview in snapshot.children.allObjects as! [DataSnapshot] {
                     let reviewObject = eachReview.value as? [String: AnyObject]
                     let reviewStar = reviewObject?["rating"]
@@ -37,16 +38,11 @@ class CommentViewController: UIViewController {
                     reviewArr.append(new_Review)
                     self.tableView.reloadData()
                     }
+                print("hello \(reviewArr.count)")
                 if reviewArr.count > 0 {
                     self.currentStore = reviewArr[0].count
                 }
             }
-
-        // Do any additional setup after loading the view.
-       
-
-        print("program started")
-        //use Firebase to load data for table
 
 
     }
@@ -76,8 +72,8 @@ extension CommentViewController: UITableViewDataSource, UITableViewDelegate{
         rating = reviewArr[indexPath.row]
 
 
-        print(rating.rating,rating.comment)
-        print()
+//        print(rating.rating,rating.comment)
+//        print()
 
         cell.setItem(rating: rating)
         return cell
