@@ -9,6 +9,8 @@
 import UIKit
 import FirebaseDatabase
 
+var reviewArr = [rating]()
+
 class CommentViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -18,9 +20,7 @@ class CommentViewController: UIViewController {
 
 
     var inputCount:String?
-
     var currentStore:String = "0"
-    var inputCount:String?
 
 
     override func viewDidLoad() {
@@ -35,19 +35,19 @@ class CommentViewController: UIViewController {
                     let reviewCount = reviewObject?["count"]
                     let new_Review = rating(rating: reviewStar as! String, comment: reviewComment as! String, count:reviewCount as! String )
                     reviewArr.append(new_Review)
+                    self.tableView.reloadData()
                     }
+                if reviewArr.count > 0 {
+                    self.currentStore = reviewArr[0].count
                 }
+            }
 
         // Do any additional setup after loading the view.
-        print("number of comments: \(commentArr.count)")
+       
 
         print("program started")
         //use Firebase to load data for table
 
-
-        if commentArr.count > 0 {
-            currentStore = commentArr[0].count
-        }
 
     }
 
@@ -66,14 +66,14 @@ extension CommentViewController: UITableViewDataSource, UITableViewDelegate{
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return commentArr.count
+        return reviewArr.count
     }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RatingCell", for: indexPath) as! RatingCell
         let rating: rating
-        rating = commentArr[indexPath.row]
+        rating = reviewArr[indexPath.row]
 
 
         print(rating.rating,rating.comment)
