@@ -149,6 +149,7 @@ class ItemListScreen: UIViewController {
                     destination.item = sender as? Item
                 }
             }
+    
     //setting up search controller
     func setupSearchController(){
         
