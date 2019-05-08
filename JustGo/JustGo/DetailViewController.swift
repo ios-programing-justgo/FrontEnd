@@ -148,7 +148,7 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
         if segue.identifier == "DetailToComment"{
             let destination = segue.destination as! CommentViewController
             
-            destination.commentArr = reviewArr
+            destination.storeCount = count
     
         }
     }
