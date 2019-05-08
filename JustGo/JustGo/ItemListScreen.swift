@@ -51,6 +51,9 @@ class ItemListScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTypedAround()
+
+        
         
         //setting up searchController and navigation bar
         self.setupSearchController()

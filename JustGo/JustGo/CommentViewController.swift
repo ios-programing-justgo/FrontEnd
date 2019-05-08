@@ -25,6 +25,9 @@ class CommentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTypedAround()
+
 
         let ref = Database.database().reference().child(inputCount!).child("Ratings")
             ref.observe(.value) { (snapshot) in

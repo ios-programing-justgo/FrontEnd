@@ -30,6 +30,11 @@ class LoginViewController: UIViewController {
         emailTextField.backgroundColor = UIColor(red: 222.0/255.0, green: 160.0/255.0, blue: 65.0/255.0, alpha: 1.0)
         passwordTextField.backgroundColor = UIColor(red: 222.0/255.0, green: 160.0/255.0, blue: 65.0/255.0, alpha: 1.0)
         
+//        let tapGesture = UITapGestureRecognizer(target: self, action:"dismissKeyboard")
+//        self.view.addGestureRecognizer(tapGesture)
+        
+       self.hideKeyboardWhenTypedAround()
+        
         
     }
     
@@ -38,6 +43,10 @@ class LoginViewController: UIViewController {
         case LINE_POSITION_TOP
         case LINE_POSITION_BOTTOM
     }
+    
+//    func dismissKeyboard () {
+//        view.endEditing(true)
+//    }
     
     func addLineToView(view : UIView, position : LINE_POSITION, color: UIColor, width: Double) {
         let lineView = UIView()
@@ -87,5 +96,20 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "LoginToHome", sender: self)
             }
         }
+    }
+}
+
+
+extension UIViewController {
+    func hideKeyboardWhenTypedAround(){
+        let tapGesture = UITapGestureRecognizer(target: self, action:#selector(UIViewController.dismissKeyboard))
+                tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+        
+        
+    }
+    
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
     }
 }

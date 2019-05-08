@@ -23,6 +23,8 @@ class registerViewController: UIViewController {
         retypePasswordTextField.isSecureTextEntry = true
         
         registerImageView.image = UIImage(named:"user_group_man_woman")
+        
+        self.hideKeyboardWhenTypedAround()
 
     }
     @IBAction func dissView(_ sender: Any) {
@@ -108,3 +110,5 @@ extension UIViewController{
     }
     
 }
+
+
