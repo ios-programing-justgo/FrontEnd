@@ -19,6 +19,8 @@ class CommentViewController: UIViewController {
 
     var commentArr = [rating]()
     var currentStore:String = "0"
+    var inputCount:String?
+    
 
     
 

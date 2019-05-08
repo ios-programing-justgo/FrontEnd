@@ -147,8 +147,7 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailToComment"{
             let destination = segue.destination as! CommentViewController
-            
-            destination.storeCount = count
+            destination.inputCount = count
     
         }
     }
