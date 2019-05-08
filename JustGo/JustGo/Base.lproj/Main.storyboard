@@ -407,9 +407,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AQ-n0-uGW">
-                                <rect key="frame" x="54" y="781" width="307" height="30"/>
+                                <rect key="frame" x="54" y="781" width="166" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Order Now"/>
+                                <connections>
+                                    <action selector="orderPressed:" destination="Bn0-Cp-whs" eventType="touchUpInside" id="0rZ-pc-9Ht"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0rC-dX-5UF">
                                 <rect key="frame" x="12" y="631" width="158" height="128"/>
