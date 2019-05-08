@@ -26,7 +26,7 @@ class ItemCell: UITableViewCell {
         
         for store in storeArr{
             if store.storeID == item.storeID{
-                storeLocationLabel.text = store.address
+                storeLocationLabel.text = store.name
             
             }
         }

@@ -133,7 +133,7 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
     
     @IBAction func orderPressed(_ sender: Any) {
         //dial the number
-        "+1-(800)-123-4567".makeAColl()
+        "+1-(510)-305-2438".makeAColl()
     }
     
     //setting up labels
