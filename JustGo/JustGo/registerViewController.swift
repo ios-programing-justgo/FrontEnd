@@ -14,12 +14,15 @@ class registerViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var retypePasswordTextField: UITextField!
+    @IBOutlet weak var registerImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 222.0/255.0, green: 160.0/255.0, blue: 65.0/255.0, alpha: 1.0)
         passwordTextField.isSecureTextEntry = true
         retypePasswordTextField.isSecureTextEntry = true
+        
+        registerImageView.image = UIImage(named:"user_group_man_woman")
 
     }
     @IBAction func dissView(_ sender: Any) {

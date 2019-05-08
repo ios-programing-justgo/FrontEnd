@@ -20,6 +20,7 @@
 		341A7909227E9C2200AC41FE /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341A7908227E9C2200AC41FE /* ItemCell.swift */; };
 		341A790B227E9CB000AC41FE /* ItemListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341A790A227E9CB000AC41FE /* ItemListScreen.swift */; };
 		341A790D227E9CD500AC41FE /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341A790C227E9CD500AC41FE /* LoginScreen.swift */; };
+		34324B1B2282CD290074C6E7 /* kTextFiledPlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34324B1A2282CD290074C6E7 /* kTextFiledPlaceHolder.swift */; };
 		34373635227EC93500623D66 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34373634227EC93500623D66 /* DetailViewController.swift */; };
 		34373671228006AA00623D66 /* SeachPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34373670228006AA00623D66 /* SeachPageViewController.swift */; };
 		3465E1EF22823FDF00E8ED9C /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3465E1EE22823FDE00E8ED9C /* CommentViewController.swift */; };
@@ -72,6 +73,7 @@
 		341A7908227E9C2200AC41FE /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		341A790A227E9CB000AC41FE /* ItemListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListScreen.swift; sourceTree = "<group>"; };
 		341A790C227E9CD500AC41FE /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		34324B1A2282CD290074C6E7 /* kTextFiledPlaceHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = kTextFiledPlaceHolder.swift; path = ../../../../Desktop/kTextFiledPlaceHolder.swift; sourceTree = "<group>"; };
 		34373634227EC93500623D66 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		34373670228006AA00623D66 /* SeachPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachPageViewController.swift; sourceTree = "<group>"; };
 		3465E1EE22823FDE00E8ED9C /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				3465E1F0228242E100E8ED9C /* RatingCell.swift */,
 				341A78D6227C0C0F00AC41FE /* ViewController.swift */,
 				341A78D8227C0C0F00AC41FE /* Main.storyboard */,
+				34324B1A2282CD290074C6E7 /* kTextFiledPlaceHolder.swift */,
 				D260125F2281E86E004166BF /* registerViewController.swift */,
 				D26012612281E8F7004166BF /* LoginViewController.swift */,
 				341A78DB227C0C1100AC41FE /* Assets.xcassets */,
@@ -453,6 +456,7 @@
 				34373635227EC93500623D66 /* DetailViewController.swift in Sources */,
 				34373671228006AA00623D66 /* SeachPageViewController.swift in Sources */,
 				D26012622281E8F7004166BF /* LoginViewController.swift in Sources */,
+				34324B1B2282CD290074C6E7 /* kTextFiledPlaceHolder.swift in Sources */,
 				D26012642281F818004166BF /* settingViewController.swift in Sources */,
 				D2C0A49C22823B9B00DE7D7B /* rating.swift in Sources */,
 			);

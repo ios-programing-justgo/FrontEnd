@@ -153,8 +153,7 @@ class ItemListScreen: UIViewController {
             }
     
     //setting up search controller
-    func setupSearchController(){
-        
+    func setupSearchController(){        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Food"
@@ -184,12 +183,6 @@ class ItemListScreen: UIViewController {
         return searchController.isActive && !searchBarIsEmpty()
     }
 
-//    func filterArray(keyword:String){
-//        filteredItems = itemArr.filter({( item : Item) -> Bool in
-//            return item.name.lowercased().contains(keyword.lowercased())
-//        })
-//        tableView.reloadData()
-//    }
 }
 
 extension ItemListScreen: UITableViewDataSource, UITableViewDelegate{
