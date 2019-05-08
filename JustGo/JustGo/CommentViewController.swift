@@ -18,9 +18,7 @@ class CommentViewController: UIViewController {
 
 
     var inputCount:String?
-
     var currentStore:String = "0"
-    var inputCount:String?
 
 
     override func viewDidLoad() {
