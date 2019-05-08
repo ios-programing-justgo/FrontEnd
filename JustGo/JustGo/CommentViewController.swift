@@ -25,29 +25,18 @@ class CommentViewController: UIViewController {
         var comment: String
         var count: String
     }
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         print("number of comments: \(commentArr.count)")
-<<<<<<< HEAD
         
-=======
-
-        if commentArr.count > 0 {
-            currentStore = commentArr[0].count
-        }
-<<<<<<< HEAD
-        let ref = Database.database().reference().child(currentStore).child("Ratings")
+        print("program started")
+        //use Firebase to load data for table
 
 
-
->>>>>>> b3ee1e45db1adf61faf4a0e8468f16220c9986cf
-=======
-        
->>>>>>> 253a4fc952a04f07641b15c5a9a2d63e48757d90
     }
 
     @IBAction func submitPressed(_ sender: Any) {
@@ -71,16 +60,7 @@ extension CommentViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RatingCell", for: indexPath) as! RatingCell
         let rating: rating
-
         rating = commentArr[indexPath.row]
-<<<<<<< HEAD
-
-        
-=======
-        print(rating.rating,rating.comment)
-        print()
-
->>>>>>> b3ee1e45db1adf61faf4a0e8468f16220c9986cf
         cell.setItem(rating: rating)
         return cell
     }
