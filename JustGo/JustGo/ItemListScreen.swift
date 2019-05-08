@@ -225,14 +225,18 @@ extension ItemListScreen: UISearchResultsUpdating {
 
     
     func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
-        self.mapView.removeAnnotations(self.mapView.annotations)
-        for item in self.filteredItems{
-            for store in storeArr{
-                if store.storeID == item.storeID{
-                    createNewPin(name: store.name, latt: Double(store.lat)!, long: Double(store.lon)!)
+        if searchController.searchBar.text != ""{
+            
+            filterContentForSearchText(searchController.searchBar.text!)
+            self.mapView.removeAnnotations(self.mapView.annotations)
+            for item in self.filteredItems{
+                for store in storeArr{
+                    if store.storeID == item.storeID{
+                        createNewPin(name: store.name, latt: Double(store.lat)!, long: Double(store.lon)!)
+                    }
                 }
             }
         }
-    }
+        }
+
 }
