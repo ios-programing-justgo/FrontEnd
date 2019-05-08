@@ -20,40 +20,25 @@ class CommentViewController: UIViewController {
     var commentArr = [rating]()
     var currentStore:String = "0"
     
-    struct uploadReview {
-        var starRating: String
-        var comment: String
-        var count: String
-    }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         print("number of comments: \(commentArr.count)")
-<<<<<<< HEAD
-        
-=======
+
 
         if commentArr.count > 0 {
             currentStore = commentArr[0].count
         }
-<<<<<<< HEAD
-        let ref = Database.database().reference().child(currentStore).child("Ratings")
 
-
-
->>>>>>> b3ee1e45db1adf61faf4a0e8468f16220c9986cf
-=======
-        
->>>>>>> 253a4fc952a04f07641b15c5a9a2d63e48757d90
     }
 
     @IBAction func submitPressed(_ sender: Any) {
         let ref = Database.database().reference().child(currentStore).child("Ratings")
-        let temp = uploadReview(starRating: scoreTextField.text!, comment: commentTextField.text!, count: currentStore)
-        ref.setValue(temp)
+        let number = Int.random(in: 0 ..< 100000000)
+        let dict : NSDictionary = [ "comment" : commentTextField.text!, "count" : currentStore, "rating" : scoreTextField.text!]
+        ref.child(String(number)).setValue(dict)
         self.tableView.reloadData()
         
     }
@@ -73,14 +58,11 @@ extension CommentViewController: UITableViewDataSource, UITableViewDelegate{
         let rating: rating
 
         rating = commentArr[indexPath.row]
-<<<<<<< HEAD
 
-        
-=======
+
         print(rating.rating,rating.comment)
         print()
 
->>>>>>> b3ee1e45db1adf61faf4a0e8468f16220c9986cf
         cell.setItem(rating: rating)
         return cell
     }
