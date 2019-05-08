@@ -17,7 +17,7 @@ class customPin: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String?
     var subtitle: String?
-    
+
     init(pinTitle:String, pinSubTitle:String, location:CLLocationCoordinate2D) {
         self.title = pinTitle
         self.subtitle = pinSubTitle
@@ -28,8 +28,8 @@ class customPin: NSObject, MKAnnotation {
 
 
 class DetailViewController: UIViewController,MKMapViewDelegate  {
-    
-    
+
+
     var item: Item?
     //set up for map
     let locationManager = CLLocationManager()
@@ -38,21 +38,21 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
     var lon:Double = 0.0
     var pin:String = ""
     var count:String = "0"
-    
 
-    
+
+
     @IBOutlet weak var detailNameLabel: UILabel!
     @IBOutlet weak var detailPriceLabel: UILabel!
     @IBOutlet weak var detailStoreAddressLabel: UILabel!
-    
+
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var itemImageView: UIImageView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = item?.name
-        
-    
+
+
         //get store coords
         for store in storeArr{
             if store.storeID == item?.storeID{
@@ -61,10 +61,10 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
                 pin = store.name
                 count = store.count
                 print(count)
-                
+
             }
         }
-        
+
 //        let ref = Database.database().reference().child(count).child("Ratings")
 //        ref.observe(.value) { (snapshot) in
 //            for eachReview in snapshot.children.allObjects as! [DataSnapshot] {
@@ -76,7 +76,7 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
 //                reviewArr.append(new_Review)
 //            }
 //        }
-        
+
         //set up for mapView
         checkLocationServices()
 
@@ -122,38 +122,38 @@ class DetailViewController: UIViewController,MKMapViewDelegate  {
         }
 
         self.mapView.delegate = self
-        
-        
+
+
         //setting up other UI
         self.setUI()
     }
-    
-    
+
+
     //setting up labels
     func setUI(){
-        
+
         detailNameLabel.text = item?.name
         detailPriceLabel.text = item?.price
         itemImageView.image = item?.image
-        
+
         for store in storeArr{
             if store.storeID == item?.storeID{
                 detailStoreAddressLabel.text = store.address
             }
         }
     }
-    
+
     //passing data to commentVC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailToComment"{
             let destination = segue.destination as! CommentViewController
-            
+
             destination.inputCount = count
-    
+
         }
     }
-    
-    
+
+
     //MARK:- MapKit delegates
 
     func setUpLocationManager(){

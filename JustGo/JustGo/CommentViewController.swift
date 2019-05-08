@@ -18,13 +18,14 @@ class CommentViewController: UIViewController {
 
 
     var inputCount:String?
-    
+
     var currentStore:String = "0"
-    
+    var inputCount:String?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let ref = Database.database().reference().child(inputCount!).child("Ratings")
             ref.observe(.value) { (snapshot) in
                 for eachReview in snapshot.children.allObjects as! [DataSnapshot] {
@@ -39,7 +40,7 @@ class CommentViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         print("number of comments: \(commentArr.count)")
-        
+
         print("program started")
         //use Firebase to load data for table
 
@@ -56,7 +57,7 @@ class CommentViewController: UIViewController {
         let dict : NSDictionary = [ "comment" : commentTextField.text!, "count" : currentStore, "rating" : scoreTextField.text!]
         ref.child(String(number)).setValue(dict)
 //        self.tableView.reloadData()
-        
+
     }
 }
 
