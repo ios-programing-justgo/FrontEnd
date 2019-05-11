@@ -112,6 +112,7 @@
                                 <connections>
                                     <action selector="dissView:" destination="WfS-y7-zKu" eventType="touchUpInside" id="dQh-Mz-dsu"/>
                                     <action selector="dissView:" destination="v5n-5I-pZ6" eventType="touchUpInside" id="lcF-OB-wlK"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="RegisterToHome" id="kjU-8i-oVE"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="keA-el-4wb">
@@ -191,7 +192,7 @@
                                 </state>
                                 <connections>
                                     <action selector="registerPresseded:" destination="WfS-y7-zKu" eventType="touchUpInside" id="aCc-jj-lyc"/>
-                                    <segue destination="QBM-EM-ITw" kind="show" identifier="RegisterToHome" id="jr0-1b-DT6"/>
+                                    <segue destination="v5n-5I-pZ6" kind="show" identifier="RegisterToLogin" id="Ze4-IK-uiy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIh-Am-qCQ">
@@ -200,6 +201,7 @@
                                 <state key="normal" title="Home"/>
                                 <connections>
                                     <action selector="dissView:" destination="WfS-y7-zKu" eventType="touchUpInside" id="7eL-Fh-NPn"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="LoginToHome" id="8OH-Mj-ufG"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xVr-Kf-rPM">
@@ -670,6 +672,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Idc-AD-lce"/>
-        <segue reference="jr0-1b-DT6"/>
+        <segue reference="Ze4-IK-uiy"/>
+        <segue reference="8OH-Mj-ufG"/>
     </inferredMetricsTieBreakers>
 </document>

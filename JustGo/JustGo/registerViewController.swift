@@ -33,15 +33,27 @@ class registerViewController: UIViewController {
     
     @IBAction func registerPresseded(_ sender: UIButton) {
         
-        if retypePasswordTextField == nil {
-            let alert = UIAlertController(title: "Error", message: "retype password is empty", preferredStyle: .alert)
+        if emailTextField.text == "" {
+            let alert = UIAlertController(title: "Error", message: "Email can not be empty", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if passwordTextField.text == "" {
+            let alert = UIAlertController(title: "Error", message: "Password is empty", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if retypePasswordTextField.text == "" {
+            let alert = UIAlertController(title: "Error", message: "Retype password is empty", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
         }
         
         else if retypePasswordTextField.text! != passwordTextField.text! {
-            let alert = UIAlertController(title: "Error", message: "passwords do not match", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: "Passwords do not match", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
@@ -56,7 +68,7 @@ class registerViewController: UIViewController {
                 } else {
                     print("Registration Successful!")
                     let defaultAction = UIAlertAction(title: "Agree", style: .default) { (action) in
-                        self.performSegue(withIdentifier: "RegisterToHome", sender: self)
+                        
                     }
                     let alert = UIAlertController(title: "Success", message: "You have successfully registered for an account", preferredStyle: .alert)
                     alert.addAction(defaultAction)

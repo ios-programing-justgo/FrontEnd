@@ -117,7 +117,7 @@ class ItemListScreen: UIViewController {
                     
                     //perform search when everything is loaded!!!!
                     //
-                    //self.searchController.searchBar.becomeFirstResponder()
+                    self.searchController.searchBar.becomeFirstResponder()
                     
                     
                 }
