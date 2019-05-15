@@ -99,6 +99,7 @@ class ItemListScreen: UIViewController {
                             let new_drink = Item(name:drinkName as! String,price:drinkPrice as! String, picture:drinkPicture as! String, storeID:drinkStoreID as! String, image:UIImage(named:drinkImage as! String)!)
                         //  new_drink.getInfo()
                             itemArr.append(new_drink)
+                            self.tableView.reloadData()
                         }
                     })
                     let storeObject = store.value as? [String: AnyObject]
@@ -117,15 +118,17 @@ class ItemListScreen: UIViewController {
                     
                     //perform search when everything is loaded!!!!
                     //
-                    self.searchController.searchBar.becomeFirstResponder()
-                    
+                    //self.searchController.searchBar.becomeFirstResponder()
                     
                 }
             }
+            self.tableView.reloadData()
             self.searchController.searchBar.text = self.search_text
             
             self.searchController.searchBar.becomeFirstResponder()
             print(storeArr.count)
+    
+            
             //FOR JIMMY: loop through storeArr to get the coordinates and store name
             func createNewPin(name: String, latt: Double, long: Double){
                 let another_pin_coor = CLLocationCoordinate2D(latitude: latt, longitude: long)
