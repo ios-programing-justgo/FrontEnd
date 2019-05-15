@@ -97,7 +97,7 @@ class ItemListScreen: UIViewController {
                             let drinkPicture = drinkObject?["picture"]
                             //create a new drink item and add to table
                             let new_drink = Item(name:drinkName as! String,price:drinkPrice as! String, picture:drinkPicture as! String, storeID:drinkStoreID as! String, image:UIImage(named:drinkImage as! String)!)
-                        //  new_drink.getInfo()
+                        //new_drink.getInfo()
                             itemArr.append(new_drink)
                             self.tableView.reloadData()
                         }
@@ -117,8 +117,7 @@ class ItemListScreen: UIViewController {
                     self.tableView.reloadData()
                     
                     //perform search when everything is loaded!!!!
-                    //
-                    //self.searchController.searchBar.becomeFirstResponder()
+                    self.searchController.searchBar.becomeFirstResponder()
                     
                 }
             }
