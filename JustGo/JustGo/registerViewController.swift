@@ -14,6 +14,7 @@ class registerViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var retypePasswordTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var registerImageView: UIImageView!
     
     override func viewDidLoad() {
@@ -31,30 +32,27 @@ class registerViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func registerPresseded(_ sender: UIButton) {
+    @IBAction func registerPresseded(_ sender: Any) {
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         
         if emailTextField.text == "" {
             let alert = UIAlertController(title: "Error", message: "Email can not be empty", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
         }
         else if passwordTextField.text == "" {
             let alert = UIAlertController(title: "Error", message: "Password is empty", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
         }
         else if retypePasswordTextField.text == "" {
             let alert = UIAlertController(title: "Error", message: "Retype password is empty", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
         }
         
         else if retypePasswordTextField.text! != passwordTextField.text! {
             let alert = UIAlertController(title: "Error", message: "Passwords do not match", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
         }
@@ -64,18 +62,21 @@ class registerViewController: UIViewController {
                     print(error!)
                     self.handleError(error!)
                     return
-                    
                 } else {
+                    let user = Auth.auth().currentUser
+                    if let user = user {
+                        let changeRequest = user.createProfileChangeRequest()
+                        changeRequest.displayName = self.nameTextField.text
+                        changeRequest.commitChanges(completion: nil)
+                        }
                     print("Registration Successful!")
-                    let defaultAction = UIAlertAction(title: "Agree", style: .default) { (action) in
-                        
-                    }
-                    let alert = UIAlertController(title: "Success", message: "You have successfully registered for an account", preferredStyle: .alert)
-                    alert.addAction(defaultAction)
-                    
-                    self.present(alert, animated: true) {
-                        // The alert was presented
-                    }
+                    let alert = UIAlertController(title: "Agree", message: "You have successfully registered for an account", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+//                        self.dismiss(animated: true, completion: nil)
+                        self.performSegue(withIdentifier: "RegisterToHome", sender: nil)
+                    })
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true)
                 }
             }
         }
