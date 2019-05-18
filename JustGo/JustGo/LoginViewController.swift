@@ -88,6 +88,7 @@ class LoginViewController: UIViewController {
                 return
             } else {
                 print("Login Successful!")
+                self.performSegue(withIdentifier: "LoginToHome", sender: nil)
             }
         }
     }

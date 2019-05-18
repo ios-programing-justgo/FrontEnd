@@ -11,8 +11,12 @@ import Firebase
 
 class settingViewController: UIViewController {
 
+    @IBOutlet weak var userName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let user = Auth.auth().currentUser
+        userName.text = user?.displayName
 
         // Do any additional setup after loading the view.
     }

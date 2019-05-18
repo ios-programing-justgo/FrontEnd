@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,7 +78,6 @@
                                 </state>
                                 <connections>
                                     <action selector="LoginPressed:" destination="v5n-5I-pZ6" eventType="touchUpInside" id="Eky-1J-nRa"/>
-                                    <segue destination="QBM-EM-ITw" kind="show" identifier="LoginToHome" id="Lk2-gZ-8X8"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZH5-PW-9ZV" customClass="kTextFiledPlaceHolder" customModule="JustGo" customModuleProvider="target">
@@ -132,6 +131,7 @@
                         <outlet property="passwordImageView" destination="Ukw-JG-rpF" id="ZAQ-Ig-ECg"/>
                         <outlet property="passwordTextField" destination="T06-qe-wlR" id="90X-OM-5lS"/>
                         <outlet property="userImageView" destination="keA-el-4wb" id="JNC-d4-u12"/>
+                        <segue destination="QBM-EM-ITw" kind="show" identifier="LoginToHome" id="qoF-Bl-WmJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thL-1d-oRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -192,7 +192,6 @@
                                 </state>
                                 <connections>
                                     <action selector="registerPresseded:" destination="WfS-y7-zKu" eventType="touchUpInside" id="aCc-jj-lyc"/>
-                                    <segue destination="v5n-5I-pZ6" kind="show" identifier="RegisterToLogin" id="Ze4-IK-uiy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIh-Am-qCQ">
@@ -201,23 +200,36 @@
                                 <state key="normal" title="Home"/>
                                 <connections>
                                     <action selector="dissView:" destination="WfS-y7-zKu" eventType="touchUpInside" id="7eL-Fh-NPn"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="LoginToHome" id="8OH-Mj-ufG"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xVr-Kf-rPM">
                                 <rect key="frame" x="165" y="253" width="85" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pIc-hC-R78" customClass="kTextFiledPlaceHolder" customModule="JustGo" customModuleProvider="target">
+                                <rect key="frame" x="61" y="576" width="293" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kjf-ll-Kbb"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="I5Y-qF-uze" id="Oxe-sE-8DA"/>
+                        <outlet property="nameTextField" destination="pIc-hC-R78" id="Jhi-6f-cdV"/>
                         <outlet property="passwordTextField" destination="DWZ-Me-5Xw" id="IR2-s3-31n"/>
                         <outlet property="registerButton" destination="1tc-x0-tcW" id="xky-ZB-7Kl"/>
                         <outlet property="registerImageView" destination="xVr-Kf-rPM" id="vGB-3s-aqS"/>
                         <outlet property="retypePasswordTextField" destination="PLZ-3q-oBS" id="RhN-cB-rjI"/>
+                        <segue destination="QBM-EM-ITw" kind="show" identifier="RegisterToHome" id="UqU-xZ-D4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95c-Bi-KvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -648,8 +660,15 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="ARr-Ob-4NH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is the setting page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7V-DH-Ln7">
-                                <rect key="frame" x="118" y="285" width="179" height="115"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7V-DH-Ln7">
+                                <rect key="frame" x="118" y="122" width="179" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi2-Du-szP">
+                                <rect key="frame" x="118" y="216" width="179" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -660,10 +679,13 @@
                         <viewLayoutGuide key="safeArea" id="bsY-9t-nnL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Setting" image="settings" id="c3F-J8-mLi"/>
+                    <connections>
+                        <outlet property="userName" destination="Bi2-Du-szP" id="pG3-cy-rki"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rqb-Hq-SWK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2713" y="1107"/>
+            <point key="canvasLocation" x="-2713.04347826087" y="1106.9196428571429"/>
         </scene>
     </scenes>
     <resources>
@@ -672,7 +694,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Idc-AD-lce"/>
-        <segue reference="Ze4-IK-uiy"/>
+        <segue reference="UqU-xZ-D4b"/>
         <segue reference="ARr-Ob-4NH"/>
     </inferredMetricsTieBreakers>
 </document>
